@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>br.com.erudio</groupId>
-	<artifactId>rest-with-spring-boot-and-java-erudio-2025</artifactId>
+	<artifactId>04_FirstStepsInJavawithSpringBoot</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>rest-with-spring-boot-and-java-erudio-2025</name>
 	<properties>
