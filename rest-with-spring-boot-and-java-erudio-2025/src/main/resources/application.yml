@@ -16,9 +16,7 @@ spring:
 logging:
   level:
     # root: WARN
-<<<<<<< HEAD
+
     br.com.erudio: DEBUG
-=======
-      br.com.erudio: DEBUG
->>>>>>> 953a2600f6423c31003dac71efac0d65cb694560
+
 
