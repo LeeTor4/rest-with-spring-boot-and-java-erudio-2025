@@ -15,6 +15,6 @@ spring:
     open-in-view: false
 logging:
   level:
-    root: WARN
-    # br.com.erudio: DEBUG
+    # root: WARN
+    br.com.erudio: DEBUG
 

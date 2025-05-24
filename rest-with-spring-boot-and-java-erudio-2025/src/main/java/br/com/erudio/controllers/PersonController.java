@@ -10,36 +10,36 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/person")
+@RequestMapping("/person/v1")
 public class PersonController {
 
     @Autowired
     private PersonServices services;
 
-    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE
+    @GetMapping(produces = {MediaType.APPLICATION_JSON_VALUE ,MediaType.APPLICATION_XML_VALUE}
     )
     public List<PersonDTO> findById() {
         return services.findALl();
     }
 
     @GetMapping(value = "/{id}",
-            produces = MediaType.APPLICATION_JSON_VALUE
+            produces = {MediaType.APPLICATION_JSON_VALUE ,MediaType.APPLICATION_XML_VALUE}
     )
     public PersonDTO findById(@PathVariable("id") Long id) {
         return services.findById(id);
     }
 
     @PostMapping(
-            consumes = MediaType.APPLICATION_JSON_VALUE,
-            produces = MediaType.APPLICATION_JSON_VALUE
+            consumes = {MediaType.APPLICATION_JSON_VALUE ,MediaType.APPLICATION_XML_VALUE},
+            produces = {MediaType.APPLICATION_JSON_VALUE ,MediaType.APPLICATION_XML_VALUE}
     )
     public PersonDTO create(@RequestBody PersonDTO personDTO) {
         return services.create(personDTO);
     }
 
     @PutMapping(
-            consumes = MediaType.APPLICATION_JSON_VALUE,
-            produces = MediaType.APPLICATION_JSON_VALUE
+            consumes = {MediaType.APPLICATION_JSON_VALUE ,MediaType.APPLICATION_XML_VALUE},
+            produces = {MediaType.APPLICATION_JSON_VALUE ,MediaType.APPLICATION_XML_VALUE}
     )
     public PersonDTO update(@RequestBody PersonDTO personDTO) {
         return services.update(personDTO);
