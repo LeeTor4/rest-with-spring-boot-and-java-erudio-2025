@@ -21,7 +21,7 @@ public class PersonController {
                             MediaType.APPLICATION_XML_VALUE,
                             MediaType.APPLICATION_YAML_VALUE}
     )
-    public List<PersonDTO> findById() {
+    public List<PersonDTO> findAll() {
         return services.findALl();
     }
 
