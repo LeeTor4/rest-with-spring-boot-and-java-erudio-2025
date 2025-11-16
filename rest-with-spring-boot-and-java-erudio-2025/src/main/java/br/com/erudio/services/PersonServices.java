@@ -2,6 +2,7 @@ package br.com.erudio.services;
 
 import br.com.erudio.controllers.PersonController;
 import br.com.erudio.data.dto.PersonDTO;
+import br.com.erudio.exception.RequiredObjectIsNullException;
 import br.com.erudio.exception.ResourceNotFoundException;
 import static  br.com.erudio.mapper.ObjectMapper.parseListObjects;
 import static  br.com.erudio.mapper.ObjectMapper.parseObject;
@@ -23,7 +24,6 @@ import java.util.concurrent.atomic.AtomicLong;
 @Service
 public class PersonServices {
 
-    private final AtomicLong counter = new AtomicLong();
     private Logger logger = LoggerFactory.getLogger(PersonServices.class.getName());
 
     @Autowired
@@ -49,6 +49,8 @@ public class PersonServices {
 
     public PersonDTO create(PersonDTO personDTO){
 
+        if (personDTO == null) throw new RequiredObjectIsNullException();
+
         logger.info("Create one Person!");
 
         var entity = parseObject(personDTO,Person.class);
@@ -59,6 +61,8 @@ public class PersonServices {
     }
 
     public PersonDTO update(PersonDTO personDTO) {
+
+        if (personDTO == null) throw new RequiredObjectIsNullException();
 
         logger.info("Updating one Person!");
 
