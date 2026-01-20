@@ -39,9 +39,7 @@ class PersonServicesTest {
     void setUp() {
 
         input = new MockPerson();
-
         MockitoAnnotations.openMocks(this);
-
     }
 
     @Test

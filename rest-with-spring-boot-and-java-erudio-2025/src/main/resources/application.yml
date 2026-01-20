@@ -18,5 +18,9 @@ logging:
     # root: WARN
 
     br.com.erudio: DEBUG
+spring-doc:
+  paths-to-match: /**/v1/**
+  swagger-ui:
+    use-root-path: true
 
 
